@@ -1,0 +1,399 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: white;
+    overflow-x: hidden;
+}
+
+.container {
+    /* width: 80%;
+    max-width: 1200px; */
+    background-color: white;
+    padding: 20px;
+
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+
+.intro {
+    text-align: left;
+    margin: 5%;
+}
+
+.award {
+    color: red;
+    font-weight: 500;
+    margin-bottom: 10%;
+}
+
+.title {
+    font-size: 42px;
+    font-weight: bold;
+    margin: 10% 0;
+}
+
+.description {
+    font-size: 16px;
+    margin: 10% 0;
+
+}
+
+.contact-button {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.popup-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+  }
+  
+.form-container h2{
+    margin-bottom: 5%;
+}
+.inputs{
+    
+    display: flex;
+    flex-direction: column;
+    margin: 2% 0%;
+}
+.inputs input{
+    all:unset;
+    border-style: none none solid none;
+    padding: 5px;
+
+}
+.fnln{
+    display: flex;
+    justify-content: space-between;
+}
+.fnln input{
+    width: 250px;
+}
+.form-container>label{
+    margin: 5% 0;
+}
+.submit-button, .close-button {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+}
+
+.close-button {
+    background-color: gray;
+}
+
+.company-growth {
+    text-align: center;
+    /* margin: px 0; */
+    background-color: #FAFAFA;
+    padding: 5%;
+    width: 100vw;
+}
+.company-growth h4{
+    color:#ff4d4d;
+    font-weight: 400;
+    margin-bottom: 2%;
+}
+
+.stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 75%;
+    margin-left: 10%;
+}
+
+.stat {
+    width: 180px;
+    height: 160px;
+    text-align: center;
+    margin: 15px;
+    background-color: white;
+    padding: 2%;
+}
+
+.stat:hover{
+    width: 200px;
+    height: 170px;
+    box-shadow: 5px 10px 18px #888888;
+}
+
+.number {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 5%;
+}
+
+.label {
+    font-size: .8rem;
+}
+
+.client-feedback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left:10%;
+    padding: 5%;
+
+}
+.client-feedback h5{
+    color: #ff4d4d;
+    font-weight: 400;
+}
+.feedback {
+    margin: 3% 5% 5% 5%;
+}
+
+blockquote {
+    font-size: 16px;
+    margin: 20px 0;
+    width: 55%;
+}
+blockquote b{
+    color: #ff4d4d;
+}
+blockquote p:nth-of-type(2){
+    color: #A7A7A7;
+}
+.first{
+    height: 100vh;
+    width:100vw;
+    /* margin-left: 0%; */
+    display: flex;
+    /* padding: 5% 10% 5% 10%; */
+    justify-content: center;
+    align-items: center;
+}
+
+.first img{
+    height:600px;
+    width: 400px;
+}
+
+.first section:nth-of-type(1){
+    width:30%;
+}
+
+/* Second */
+.container1 {
+    min-width: 100vw;
+    margin: 0 auto;
+    padding: 5%;
+    background-color: #FAFAFA;
+}
+.container1 h1 {
+    color: #ff4d4d;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.container1 h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    padding-right: 10%;
+}
+.slider-container {
+    position: relative;
+    overflow: hidden;
+
+}
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.slide {
+    flex: 0 0 25%;
+    padding: 10px;
+    position: relative;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.slide-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.slide:hover .slide-content {
+    opacity: 1;
+}
+.read-more {
+    background-color: white;
+    color: #ff4d4d;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+}
+.nav-buttons {
+    align-self: flex-start;
+    margin-top: 10%;
+}
+.nav-button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #ccc;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.nav-button.active {
+    background-color: #ff4d4d;
+}
+.cont1{
+    display: flex;
+}
+.cont1>div{
+    width:60%;
+    margin-left:10% ;
+    padding-right: 10%;
+}
+
+.container2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 7%;
+    margin-left: 5%;
+}
+
+.container2 h3{
+    color:#ff4d4d;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 3%;
+    
+}
+
+.container2 h1{
+    margin-bottom: 4%;
+}
+
+.best{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.best1{
+    width:22%;
+    margin: 3%;
+}
+.best h4{
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.best p{
+    font-weight: 200;
+}
+.best img{
+    height: 30%;
+    width: 30%;
+    margin-bottom: 5%;
+}
+.container3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5% 2%;
+}
+.contain3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10%;
+
+}
+.cont_img{
+    height: 60%;
+    width: 58%;
+}
+.cont_img1{
+    display: none;
+    height: 60%;
+    width: 60%;
+}
+.cont_img2{
+display: none;
+height: 60%;
+    width: 60%;
+}
+.subcont{
+    width:30%;
+    height:55%;
+    margin: 3%;
+    background-color: #F6F6F6;
+}
+
+.cont_div{
+    padding: 6% 10% ;
+}
+
+.cont_div:hover{
+    background-color: #FF3147;
+    cursor:pointer;
+}
+
+footer{
+    background-color: #F42C3F;
+    margin: 0;
+    padding: 5%;
+    height: 30%;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer img{
+    width: 60%;
+}

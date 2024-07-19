@@ -1,0 +1,57 @@
+.container {
+    min-width: 700px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .creatorCard {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .creatorCard:hover {
+    transform: translateY(-5px);
+  }
+  
+  .creatorName {
+    font-size: 22px;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .creatorInfo {
+    margin-bottom: 8px;
+    color: #495057;
+  }
+  
+  .label {
+    font-weight: bold;
+  }
+  
+  .button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #218838;
+  }

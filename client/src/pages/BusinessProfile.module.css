@@ -1,0 +1,121 @@
+.container {
+    min-width: 800px;
+    margin: 0 auto;
+    padding: 10% 2%;
+    z-index: -1;
+  }
+  
+  .title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .noProfiles {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+  }
+  
+ 
+  
+  .profileName {
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .profileInfo {
+    margin-bottom: 10px;
+  }
+  
+  .label {
+    font-weight: bold;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input,
+  .textarea {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  
+  
+  .saveButton {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .saveButton:hover {
+    background-color: #218838;
+  }
+  
+  .cancelButton {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .cancelButton:hover {
+    background-color: #5a6268;
+  }
+  
+  .editButton {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .editButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .deleteButton {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .deleteButton:hover {
+    background-color: #c82333;
+  }
+
+
+.profileCard {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;  /* Add this */
+    padding-bottom: 60px;  /* Add this to make room for buttons */
+  }
+  
+  
+  .buttonContainer {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .button {
+    padding: 10px 15px;
+    margin-left: 10px;  /* Changed from margin-right to margin-left */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
