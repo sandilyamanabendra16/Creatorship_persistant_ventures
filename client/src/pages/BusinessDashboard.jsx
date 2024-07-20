@@ -77,7 +77,7 @@ function BusinessDashboard() {
       };
     return (
         <div className={styles.container}>
-          <h2 className={styles.title}>Creators Feed</h2>
+          <h2 className={styles.title}>Creators to connect with</h2>
           {creators.map(creator => (
             <div key={creator._id} className={styles.creatorCard}>
               <h3 className={styles.creatorName}>{creator.name}</h3>

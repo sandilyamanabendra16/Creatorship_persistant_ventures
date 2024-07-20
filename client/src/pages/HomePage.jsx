@@ -128,7 +128,7 @@ function HomePage() {
                     <div className="slide-content">
                         <h3>EQUITY PARTNERSHIPS</h3>
                        <p>Facilitate equity-based deals between creators and businesses, aligning long-term interests.</p>
-                        <a href={userType === 'creator'? "/creator-dashboard": "/business-dashboard"} target="_blank" class="read-more">LEARN MORE →</a>
+                        <a href={userType ? (userType === 'creator'? "/creator-dashboard": "/business-dashboard"):"/login"} target="_blank" class="read-more">LEARN MORE →</a>
                     </div>
                 </div>
                 <div className="slide">
@@ -136,7 +136,7 @@ function HomePage() {
                     <div className="slide-content">
                         <h3>STARTUP PROMOTION</h3>
                         <p>Connect early-stage companies with influential creators to boost growth and visibility.</p>
-                        <a href={userType === 'creator'? "/creator-dashboard": "/business-dashboard"} target="_blank" class="read-more">DISCOVER →</a>
+                        <a href={userType ? (userType === 'creator'? "/creator-dashboard": "/business-dashboard"):"/login"} target="_blank" class="read-more">DISCOVER →</a>
                     </div>
                 </div>
                 <div className="slide">
@@ -144,7 +144,7 @@ function HomePage() {
                     <div className="slide-content">
                         <h3>WEB DEVELOPMENT</h3>
                         <p>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque</p>
-                        <a href={userType === 'creator'? "/creator-dashboard": "/business-dashboard"}target="_blank" class="read-more">EXPLORE →</a>
+                        <a href={userType ? (userType === 'creator'? "/creator-dashboard": "/business-dashboard"):"/login"} target="_blank" class="read-more">EXPLORE →</a>
                     </div>
                 </div>
                 <div className="slide">
@@ -152,7 +152,7 @@ function HomePage() {
                     <div className="slide-content">
                         <h3>PORTFOLIO DEVELOPMENT</h3>
                         <p>Help creators and our platform build valuable portfolios of equity stakes.</p>
-                        <a href={userType === 'creator'? "/creator-dashboard": "/business-dashboard"} target="_blank" class="read-more">READ MORE →</a>
+                        <a href={userType ? (userType === 'creator'? "/creator-dashboard": "/business-dashboard"):"/login"} target="_blank" class="read-more">READ MORE →</a>
                     </div>
                 </div>
         </div>

@@ -1,3 +1,3 @@
-const backend_uri="http://localhost:8000";
+const backend_uri="https://creatorship-persistant-ventures.onrender.com";
 
 export {backend_uri};

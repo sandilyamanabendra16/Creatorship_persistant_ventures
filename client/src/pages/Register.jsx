@@ -2,6 +2,8 @@ import axios from "axios";
 import { useState } from "react";
 import {backend_uri} from '../constants/Uri';
 import { useNavigate } from "react-router-dom";
+import bgImg from "../assets/image 466.png";
+import styles from './Register.module.css';
 
 function Register() {
     const [email, setEmail] = useState('');
@@ -22,6 +24,11 @@ function Register() {
     };
   
     return (
+
+        <div className={styles.full}>
+        <div className={styles.left}> 
+        <h1> Create an account</h1>
+        <p>Your personal Creatorship partner</p>
       <form onSubmit={handleSubmit}>
         <input 
           type="text" 
@@ -38,7 +45,14 @@ function Register() {
           <option value="creator">Creator</option>
         </select>
         <button type="submit">Register</button>
+        <p> Already have an account? <a href="/login">Sign in</a></p>
       </form>
+      </div>
+        <div className={styles.right}>
+            <h1>Your Personal Creatorship Partner</h1>
+            <img src={bgImg} alt="bgImg"/>
+        </div>
+    </div>
     );
   }
   
