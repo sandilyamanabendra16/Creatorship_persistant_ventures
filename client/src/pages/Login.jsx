@@ -14,9 +14,9 @@ function Login() {
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('userType', response.data.userType);
         if (response.data.userType === 'business') {
-          window.location = '/home';
+          window.location = '/business-dashboard';
         } else {
-          window.location = '/home';
+          window.location = '/creator-dashboard';
         }
       } catch (error) {
         console.error(error);
