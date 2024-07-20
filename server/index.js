@@ -9,7 +9,9 @@ const app = express();
 env.config();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: "*",
+  }));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(bodyParser.json());
