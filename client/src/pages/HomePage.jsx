@@ -17,7 +17,7 @@ import { useNavigate } from 'react-router-dom';
 function HomePage() {
   const [showPopup, setShowPopup] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [activeDiv, setActiveDiv] = useState(null);
+  const [activeDiv, setActiveDiv] = useState(projects[1].id);
   const formContainerRef = useRef(null);
   const [userType, setUserType] = useState(null);
   const navigate = useNavigate();
