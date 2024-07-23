@@ -73,7 +73,7 @@ const handleStatusUpdate = async (businessId, requestId, status) => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        `${backend_uri}/equity-request//creator/request/${creatorId}`,
+        `${backend_uri}/equity-request/creator/request/${creatorId}`,
         { requestId, status },
         {
           headers: { 

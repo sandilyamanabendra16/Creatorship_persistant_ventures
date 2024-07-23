@@ -323,42 +323,72 @@ const handleShareEquity = async (req, res) => {
 
 const updateRequestByCreator = async (req, res) => {
     try {
-      const { creatorId } = req.params;
-      const { requestId, status } = req.body;
-  
-      if (!creatorId || !requestId || !status) {
-        return res.status(400).json({ message: 'Missing required fields' });
-      }
-  
-      const creator = await Creator.findOne({ userId: req.userId });
-      if (!creator) {
-        return res.status(404).json({ message: 'Creator not found' });
-      }
-  
-      const requestIndex = creator.equityRequests.findIndex(req => req._id.toString() === requestId);
-      if (requestIndex === -1) {
-        return res.status(404).json({ message: 'Equity request not found' });
-      }
-  
-      creator.equityRequests[requestIndex].status = status;
-      await creator.save();
-  
-      // Update the business's request as well
-      const businessId = creator.equityRequests[requestIndex].businessId;
-      const business = await Business.findOne({ userId: businessId });
-      if (business) {
-        const businessRequestIndex = business.equityRequests.findIndex(req => req.creatorId.toString() === creator._id.toString());
-        if (businessRequestIndex !== -1) {
-          business.equityRequests[businessRequestIndex].status = status;
-          await business.save();
+        const { creatorId } = req.params;
+        const { requestId, status } = req.body;
+
+        if (!creatorId || !requestId || !status) {
+            return res.status(400).json({ message: 'Missing required fields' });
         }
-      }
-  
-      res.json({ message: 'Request updated successfully' });
+
+        const authHeader = req.headers.authorization;
+        if (!authHeader) {
+            return res.status(401).json({ message: 'Authorization header is missing' });
+        }
+
+        const token = authHeader.split(' ')[1];
+        if (!token) {
+            return res.status(401).json({ message: 'Token is missing' });
+        }
+
+        let decoded;
+        try {
+            decoded = jwt.verify(token, process.env.JWT_SECRET);
+        } catch (error) {
+            return res.status(401).json({ message: 'Invalid or expired token' });
+        }
+
+        const userId = decoded.userId;
+        const user = await User.findById(userId);
+
+        if (user.userType !== 'creator') {
+            return res.status(403).json({ message: 'Only creators can update this equity request' });
+        }
+
+        const creator = await Creator.findById(creatorId);
+        if (!creator) {
+            return res.status(404).json({ message: 'Creator not found' });
+        }
+
+        const requestIndex = creator.equityRequests.findIndex(req => req._id.toString() === requestId);
+        if (requestIndex === -1) {
+            return res.status(404).json({ message: 'Equity request not found' });
+        }
+
+        creator.equityRequests[requestIndex].status = status;
+        await creator.save();
+
+        const updatedRequest = creator.equityRequests[requestIndex];
+
+        // Update the business's request as well
+        const businessId = updatedRequest.businessId;
+        const business = await Business.findById(businessId);
+        if (business) {
+            const businessRequestIndex = business.equityRequests.findIndex(req => req.creatorId.toString() === creatorId);
+            if (businessRequestIndex !== -1) {
+                business.equityRequests[businessRequestIndex].status = status;
+                await business.save();
+            }
+        }
+
+        res.json({ 
+            message: 'Equity request updated successfully', 
+            request: updatedRequest
+        });
     } catch (error) {
-      console.error('Error in updateRequestByCreator:', error);
-      res.status(500).json({ message: 'Error updating request', error: error.message });
+        console.error('Error in updateRequestByCreator:', error);
+        res.status(500).json({ message: 'An error occurred while updating the equity request' });
     }
-  };
+};
+
 module.exports = { SendRequest, getRequest, changeRequest, handleEquityRequest, handleShareEquity, updateRequestByCreator};
 // module.exports = { SendRequest, getRequest, changeRequest };
