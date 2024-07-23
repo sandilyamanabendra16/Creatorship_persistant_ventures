@@ -105,6 +105,7 @@ const filteredRequests = requests.filter(request => {
     if (filter === 'all') return true;
     return request.status === filter;
 });
+
   return (
 <div className={styles.container}>
   <h2 className={styles.title}>Equity Requests</h2>
@@ -123,6 +124,7 @@ const filteredRequests = requests.filter(request => {
       {userType === 'business' ? (
         <div>
           <p className={styles.requestInfo}><span className={styles.label}>From Creator ID:</span> {request.creatorId}</p>
+          <p className={styles.requestInfo}><span className={styles.label}>Service Provider Name:</span> {request.businessName}</p>
           <p className={styles.requestInfo}><span className={styles.label}>Creator Name:</span> {request.creatorName}</p>
           <p className={styles.requestInfo}><span className={styles.label}>Creator Email:</span> {request.creatorEmail}</p>
           <p className={styles.requestInfo}><span className={styles.label}>Equity:</span> {request.equity}%</p>
@@ -153,6 +155,7 @@ const filteredRequests = requests.filter(request => {
         <div>
           <p className={styles.requestInfo}><span className={styles.label}>From Business ID:</span> {request.businessId}</p>
           <p className={styles.requestInfo}><span className={styles.label}>Business Name:</span> {request.businessName}</p>
+          <p className={styles.requestInfo}><span className={styles.label}>Creator Name:</span> {request.creatorName}</p>
           <p className={styles.requestInfo}><span className={styles.label}>Equity:</span> {request.equity}%</p>
           <p className={styles.requestInfo}>
             <span className={styles.label}>Status:</span> 

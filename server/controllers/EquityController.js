@@ -97,17 +97,19 @@ const getRequest = async (req, res) => {
                 requests = requests.concat(populatedRequests);
             }
         } else if (user.userType === 'creator') {
-            const creator = await Creator.findOne({ userId });
-            if (creator) {
-                // For creators, show all their requests
-                requests = await Promise.all(creator.equityRequests.map(async (request) => {
+            const creators = await Creator.find({ userId: userId });
+            for (let creator of creators) {
+                const creatorRequests = await Promise.all(creator.equityRequests.map(async (request) => {
                     const business = await Business.findById(request.businessId);
                     return {
                         ...request.toObject(),
+                        creatorId: creator._id,
+                        creatorName: creator.name,
                         businessName: business ? business.name : 'Unknown Business',
                         businessDescription: business ? business.description : 'No description provided'
                     };
                 }));
+                requests = requests.concat(creatorRequests);
             }
         }
 
